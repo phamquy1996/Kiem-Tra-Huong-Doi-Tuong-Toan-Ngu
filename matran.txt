@@ -1,0 +1,11 @@
+3)Giả mã dạng hàm cộng 2 ma trận
+-Vào:A,B,m,n
+-Ra:C
+{Hàm này cộng 2 ma trận kích thước mxn để trong mảng 2 chiều A,B. Trả về ma trận tổng trong mảng 2 chiều C}
+Function congMT(A,B,m,n)
+	1) C[m,n] := 0;
+	2) For i:=1 to m do
+		For j:=1 to n do
+			C[i, j] := A[i, j] + B[i, j];
+	3)	return C;
+Return
