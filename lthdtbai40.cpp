@@ -7,7 +7,7 @@
  một công ty là một loại nhân sự nhưng có thêm mã nhân viên và hệ số lương. Lãnh đạo
  trong công ty là một loại nhân viên có thêm chức vụ. Nhập vào thông tin của một số nhân viên
  và lãnh đạo trong công ty. Đưa ra các thông tin đã nhập.
-*/
+ */
 
 #include<iostream>
 #include<stdio.h>
@@ -20,48 +20,49 @@ class NhanSu
     private:
 	char hoTen[31];
 	char ngaySinh[31];
-
     public:
-	void nhap();
-	void hien();
+	virtual void nhap();
+	virtual void hien();
 };
 
 class NhanVien:public NhanSu
 {
     private:
-	char maNV[11];
-	float heSoLuong;
+	char maNV[10];
+	float hSL;
 
     public:
 	void nhap();
 	void hien();
 };
 
-class LanhDao:public NhanVien
+class LanhDao:public NhanSu
 {
     private:
-	char chucVu[31];
+	char maLD[10];
+	float hSL;
+	char chucVu[20];
     
     public:
 	void nhap();
 	void hien();
 };
-
 //===Chuong trinh chinh===
 int main()
 {
-
     cout<<endl;
     return 0;
 }
 
 //===Dinh nghia ham===
+
 void NhanSu::nhap()
 {
     cout<<"Nhap ho ten: ";
     scanf(" ");cin.get(hoTen,sizeof(hoTen));
-    cout<<"Nhap ngay sinh: ";
-    cin>>ngaySinh;
+
+    cout<<"Nhap vao ngay sinh: ";
+    scanf(" ");cin.get(ngaySinh,sizeof(ngaySinh));
 }
 
 void NhanSu::hien()
@@ -72,31 +73,21 @@ void NhanSu::hien()
 
 void NhanVien::nhap()
 {
-    NhanSu::nhap();
-    cout<<"Nhap ma nhan vien: ";
-    cin>>maNV;
-    cout<<"Nhap he so luong: ";
-    cin>>heSoLuong;
-}
-
-void NhanVien::hien()
-{
-    NhanSu::hien();
-    cout<<"\n\tMa nhan vien: "<<maNV;
-    cout<<"\n\tHe so luong: "<<heSoLuong;
+   // NhanSu::hien();
+   // cout<<"\nMa nhan vien: "<<maNV;
+   // cout<<"\nHe so luong: "<<hSL;
 }
 
 void LanhDao::nhap()
 {
-    NhanVien::nhap();
-    cout<<"Nhap chuc vu: ";
-    scanf(" ");cin.get(chucVu,sizeof(chucVu));
+    //Nhanvien::nhap();
+
+    //cout<<"Nhap vao chuc vuj: ";
+    //scanf("");cin.get(chucVu, sizeof(chucVu));
 }
 
 void LanhDao::hien()
 {
-    NhanVien::hien();
-    cout<<"\n\tChucVu: "<<chucVu;
+  //  NhanVien::hien();
+    //cout<<"\n\tChucVu: "<<chucVu;
 }
-
-
