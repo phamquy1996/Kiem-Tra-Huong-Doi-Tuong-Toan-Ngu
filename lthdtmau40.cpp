@@ -51,6 +51,30 @@ class LanhDao:public NhanVien
 int main()
 {
 
+    //khai bao 2 doi tuong sinh vien
+    NhanVien nv1, nv2;
+
+    //khai bao 1 doi tuong lanh dao
+    LanhDao ld1;
+
+    //Nhap
+    cout<<"Nhap thong tin nhan vien 1:\n";
+    nv1.nhap();
+    cout<<"Nhap thong tin nhan vien 2:\n";
+    nv2.nhap();
+
+    cout<<"Nhap thong tin lanh dao:\n";
+    ld.nhap();
+
+    //hien thi
+    cout<<"\nThong tin nhan vien 1 la:\n";
+    nv1.hien();
+    cout<<"\nThong tin nhan vien 2 la:\n";
+    nv2.hien();
+
+    cout<<"\nThong tin lanh dao la:\n";
+    ld.hien();
+
     cout<<endl;
     return 0;
 }
